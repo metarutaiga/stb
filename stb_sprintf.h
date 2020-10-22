@@ -245,9 +245,9 @@ static char stbsp__period = '.';
 static char stbsp__comma = ',';
 static struct
 {
-   short temp; // force next field to be 2-byte aligned
-   char pair[201];
-} stbsp__digitpair =
+   short const temp; // force next field to be 2-byte aligned
+   char const pair[201];
+} const stbsp__digitpair =
 {
   0,
    "00010203040506070809101112131415161718192021222324"
@@ -293,8 +293,8 @@ static void stbsp__lead_sign(stbsp__uint32 fl, char *sign)
 
 STBSP__PUBLICDEF int STB_SPRINTF_DECORATE(vsprintfcb)(STBSP_SPRINTFCB *callback, void *user, char *buf, char const *fmt, va_list va)
 {
-   static char hex[] = "0123456789abcdefxp";
-   static char hexu[] = "0123456789ABCDEFXP";
+   static char const hex[] = "0123456789abcdefxp";
+   static char const hexu[] = "0123456789ABCDEFXP";
    char *bf;
    char const *f;
    int tlen = 0;
